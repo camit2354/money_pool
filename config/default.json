@@ -1,0 +1,8 @@
+{
+    "name" : "money_pool " ,
+    "mail" : "camit2354@gmail.com" ,
+    "mongodb_url" : "mongodb://localhost/money_pool",
+    "jwtPrivateKey" : "HelloWorld"
+   
+
+}
