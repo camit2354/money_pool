@@ -9,7 +9,7 @@ const adminSchema = new mongoose.Schema(
         name : {type : String ,required : true , minlength : 3 },
         email : { type : String , required : true , unique : true , minlength : 5},        
         password : { type : String , required : true },
-        poolId : {type : String }
+        poolId : {type : mongoose.Schema.Types.ObjectId }
     }
 ) ;
 

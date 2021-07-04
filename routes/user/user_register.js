@@ -23,7 +23,7 @@ router.post('/',async (req,res)=>{
         email : req.body.email ,
         password : req.body.password,
         wallet_balance : 0,
-        pools_joined : null,
+        pools_joined : [],
         score         : 1
     });    
 

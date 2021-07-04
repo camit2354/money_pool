@@ -26,8 +26,6 @@ router.post('/',async(req,res)=>{
     const salt = await bcrypt.genSalt(10);
     admin.password = await bcrypt.hash(admin.password,salt) ;
 
-    
-
     try
     {
         admin = await admin.save() ;
@@ -50,11 +48,6 @@ router.post('/',async(req,res)=>{
         return res.send(ex.message);
     }
     
-       
-   
-    
-
-
 }) ;
 
 module.exports = router ;
