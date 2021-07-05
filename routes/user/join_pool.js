@@ -18,6 +18,8 @@ router.post('/',auth ,async(req ,res)=>{
     let pool = await Pool.findById(req.body._id) ;
     if(!pool) return res.status(400).send('PoolID not present in database') ;
 
+    if(!pool.poolIsJoinUsersAllowed) return res.status(400).send('Joining to this pool is not available') ;
+
     try 
     {
         pool.joinRequests.push(user._id) ;

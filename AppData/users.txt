@@ -1,0 +1,59 @@
+{
+    "name" : "suraj pancholi",
+    "email" : "suraj9999@gmail.com",
+    "password" : "suraj9999"
+
+}
+
+{
+    "name" : "shital tekale",
+    "email" : "shital2354@gmail.com",
+    "password" : "shital2354"
+
+
+}
+   
+{
+    "name" : "ram tekale",
+    "email" : "ram2354@gmail.com",
+    "password" : "ram2354"
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUxYTg3MmNhZTg0MTgzYjI2MjRjOGYiLCJuYW1lIjoicmFtIHRla2FsZSIsImVtYWlsIjoicmFtMjM1NEBnbWFpbC5jb20iLCJpYXQiOjE2MjU0MDI2Njh9.yVeayW1Gp9L0LiGz7mIAYv7A9bSAyQI_VaAO1KOiGnI
+
+{
+    "name" : "meena khan",
+    "email" : "meena2354@gmail.com",
+    "password" : "meena2354"
+
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUxYTg3ZmNhZTg0MTgzYjI2MjRjOTIiLCJuYW1lIjoibWVlbmEga2hhbiIsImVtYWlsIjoibWVlbmEyMzU0QGdtYWlsLmNvbSIsImlhdCI6MTYyNTQwMjcwNX0.QjUK96xh9NmSf6NsDl9ZYYBMdkZmtk4hz1C2Q7RtInU
+
+
+{
+    "name" : "neha patil",
+    "email" : "neha2354@gmail.com",
+    "password" : "neha2354"
+
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUxYTg4Y2NhZTg0MTgzYjI2MjRjOTUiLCJuYW1lIjoibmVoYSBwYXRpbCIsImVtYWlsIjoibmVoYTIzNTRAZ21haWwuY29tIiwiaWF0IjoxNjI1NDAyNzM3fQ.f8qF4f8KANgMwoww8okSoDHfu9XETuihULc5mAlo-Is
+
+
+{
+    "name" : "akansha patil",
+    "email" : "akansha2354@gmail.com",
+    "password" : "akansha2354"
+
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUxYTg5N2NhZTg0MTgzYjI2MjRjOTgiLCJuYW1lIjoiYWthbnNoYSBwYXRpbCIsImVtYWlsIjoiYWthbnNoYTIzNTRAZ21haWwuY29tIiwiaWF0IjoxNjI1NDAyNzYxfQ.T1P1eEi7hBFXj-IHezGkDAfiXfwIlUiREv99-vbIKus
+
+{
+    
+        "name" : "seeta yadav",
+        "email" : "seeta2354@gmail.com",
+        "password" : "seeta2354"
+    
+    
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGUxYThhM2NhZTg0MTgzYjI2MjRjOWIiLCJuYW1lIjoic2VldGEgeWFkYXYiLCJlbWFpbCI6InNlZXRhMjM1NEBnbWFpbC5jb20iLCJpYXQiOjE2MjU0MDI3ODd9.0zXKaQDuNcuk9XLWYuGsSVcGzYgrA0DSO2R-dD3IoLo
+

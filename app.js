@@ -26,6 +26,8 @@ const allocate_money_to_winner = require('./routes/admin/allocate_money_to_winne
 const create_pool = require('./routes/admin/create_pool') ;
 const register_admin = require('./routes/admin/admin_register') ;
 const admin_login = require('./routes/admin/admin_login') ;
+const initiate_pool = require('./routes/admin/initiate_pool') ;
+const initiate_pool_next_round = require('./routes/admin/initiate_pool_next_round') ;
 
 app.use(express.json()) ;  //middleware
 app.use(express.urlencoded({extended : true})) ;  // parsed key value data  from url and provided to req.body 
@@ -45,7 +47,8 @@ app.use('/admin/allocate_money_to_winner',allocate_money_to_winner);
 app.use('/admin/create_pool',create_pool);
 app.use('/admin/register',register_admin);
 app.use('/admin/login',admin_login) ;
-
+app.use('/admin/initiate_pool',initiate_pool) ;
+app.use('/admin/initiate_pool_next_round' , initiate_pool_next_round) ;
 
 const port = process.env.PORT || 12345 ;
 app.listen(port,()=> console.log(`Listening on port ${ port } ... `) ) ;

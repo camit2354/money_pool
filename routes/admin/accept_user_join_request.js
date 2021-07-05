@@ -22,7 +22,7 @@ router.post('/',auth, async(req,res)=>{
         try
         {
             let user = await User.findById(ur) ;        
-            pool.joinRequests = pool.joinRequests.filter(i => i != ur) ;
+            pool.joinRequests = pool.joinRequests.filter(id => id != ur) ;
             if(!user)
             {
             continue ;

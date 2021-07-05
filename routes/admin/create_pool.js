@@ -7,7 +7,7 @@ const {Admin} = require('../../models/admin') ;
 const auth = require('../../middleware/admin_auth') ;
 
 router.post('/',auth,async(req,res)=>{
-    let pool_util = {name : req.body.name , adminId : req.admin._id} ;
+    let pool_util = {name : req.body.name , amt : req.body.poolStdAmt , adminId : req.admin._id} ;
     const {error} = validate(pool_util) ;
     if(error) return res.status(400).send(error.message) ;
 
@@ -20,11 +20,21 @@ router.post('/',auth,async(req,res)=>{
         name : pool_util.name,
         adminId : pool_util.adminId,
         poolBalance : 0,
+
         users : [],
         moneyRequests : [],
         satisfiedUsers : [],
-        unSatisfiedUsers : [],
-        joinRequests : []
+        unSatisfiedUsers : [],        
+        joinRequests : [],
+
+        noOfRounds : 0 ,
+        roundId    : -1 ,
+        roundMoneyAdders : [],
+        roundMoneyNonAdders : [],
+
+        poolStdAmtToAdd : pool_util.amt,
+        poolIsJoinUsersAllowed : true,
+        isPoolRoundRunning : false
     }) ;
 
     try 
