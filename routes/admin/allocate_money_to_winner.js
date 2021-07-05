@@ -21,9 +21,9 @@ router.post('/', auth, async (req, res) => {
 
         let noOfTokens = 0;
         let tokens = [];
-        for (i in pool.users) {
+        for (i in pool.unSatisfiedUsers) {
 
-            let _id = pool.users[i];
+            let _id = pool.unSatisfiedUsers[i];
             let user = await User.findById(_id).select({ score: 1 });
 
             noOfTokens += user.score;
@@ -41,8 +41,6 @@ router.post('/', auth, async (req, res) => {
     catch (ex) {
         return res.status(400).send(ex.message);
     }
-
-
 
 
 });

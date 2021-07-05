@@ -16,7 +16,7 @@ const add_money_to_pool = require('./routes/user/add_money_to_pool') ;
 const add_money_to_wallet = require('./routes/user/add_money_to_wallet');
 const vote_for_pool_request = require('./routes/user/vote_for_pool_requests') ;
 const remove_money_from_wallet = require('./routes/user/remove_money_from_wallet');
-const request_money_from_pool = require('./routes/user/request_money_to_pool') ;
+const request_money_to_pool = require('./routes/user/request_money_to_pool') ;
 const join_pool = require('./routes/user/join_pool') ;
 const user_login = require('./routes/user/user_login') ;
 
@@ -39,7 +39,7 @@ app.use('/user/add_money_to_pool',add_money_to_pool);
 app.use('/user/add_money_to_wallet',add_money_to_wallet);
 app.use('/user/vote_for_pool_request',vote_for_pool_request);
 app.use('/user/remove_money_from_wallet',remove_money_from_wallet);
-app.use('/user/request_money_from_pool',request_money_from_pool);
+app.use('/user/request_money_to_pool',request_money_to_pool);
 app.use('/user/join_pool',join_pool);
 
 app.use('/admin/accept_user_join_request',accept_user_join_request);
