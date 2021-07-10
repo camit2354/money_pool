@@ -1,5 +1,5 @@
 # money_pool
-web platform for worlds oldest saving mechanism
+web platform for worlds oldest saving mechanism 
 
 what is money pool ?
 A money pool is one of world's oldest saving mechanism in which each member of the pool contributes same amount of money for every month/week
@@ -14,5 +14,7 @@ what are benefits ?
 whats new ?
 An algorithm to decide the winner to assign the pool money based on following factors :
 1.consensus(voting system)
-2.reliability(user activity on platform)
+2.reliability(user activity on platform)  =>  stake based probability of winner  
 3.lottery system
+
+
