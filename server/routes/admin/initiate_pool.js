@@ -21,8 +21,12 @@ router.post('/', auth ,async(req,res)=>{
     pool.roundMoneyAdders = [] ;
     pool.roundMoneyNonAdders = [] ;
 
+    pool.voters = [] ;
+    pool.nonVoters = [] ;
     pool.poolIsJoinUsersAllowed = false ;
     pool.isPoolRoundRunning = false ;
+
+    pool.roundId = -1 ;
 
     for(i in pool.users)
     {

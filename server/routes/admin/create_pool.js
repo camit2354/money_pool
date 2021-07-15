@@ -34,7 +34,10 @@ router.post('/',auth,async(req,res)=>{
 
         poolStdAmtToAdd : pool_util.amt,
         poolIsJoinUsersAllowed : true,
-        isPoolRoundRunning : false
+        isPoolRoundRunning : false,
+
+        voters : [] ,
+        nonVoters : []
     }) ;
 
     try 

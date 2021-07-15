@@ -10,13 +10,6 @@ const {User} = require('../../models/user') ;
 
 const auth = require('../../middleware/user_auth') ;
 
-const moneyRequestSchema = new mongoose.Schema({
-    userId : { type : mongoose.Schema.Types.ObjectId , required : true} ,
-    need : { type: String , required : true},
-    votes : {type : Number , required : true}
-}) ;
-
-const MoneyRequest = new mongoose.model('MoneyRequest' ,moneyRequestSchema) ;
 
 router.post('/',auth,async(req,res)=>{
     const {error} = validateRequest(req.body) ;
@@ -34,22 +27,28 @@ router.post('/',auth,async(req,res)=>{
 
     if(!pool.isPoolRoundRunning) return res.status(400).send('Pool round is not yet started , u cant money request to pool') ;
 
-    for(i in pool.moneyRequests)
+    for(i of pool.satisfiedUsers)
     {
-        let mr = pool.moneyRequests[i] ;
-        
-        
-        if(String(mr.userId) === String(user._id))
+        if(String(user._id) === String(i))
+        {
+            return res.status(400).send('In current pool round , users have already been alloted pool money , please wait for next round') ;
+
+        }
+    }
+
+    for(i of pool.moneyRequests)
+    {
+        if(String(i.userId) === String(user._id))
         {
             return res.status(400).send('You have already a pending request in money pool , u cant make another one till that request is satisfied');
         }
     }
 
-    let moneyRequest = new MoneyRequest({
+    let moneyRequest = {
         userId : user._id,
         need : req.body.need,
         votes : 1
-    }) ;
+    } ;
 
     pool.moneyRequests.push(moneyRequest) ;
 

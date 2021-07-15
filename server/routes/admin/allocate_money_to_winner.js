@@ -19,7 +19,33 @@ router.post('/', auth, async (req, res) => {
         if (pool.roundMoneyNonAdders.length > 0) return res.status(400).send('Some users are remaining to add periodic  money in current round');
 
 
-        let noOfTokens = 0;
+        winner_id = find_Winner(pool) ;
+
+        pool.satisfiedUsers.push(winner_id) ; 
+        let idx = pool.unSatisfiedUsers.indexOf(winner_id) ;
+        pool.unSatisfiedUsers.splice(idx , 1) ;
+        
+        let user = await User.findById(winner_id) ;
+        user.wallet_balance = user.wallet_balance + pool.poolBalance ;
+        pool.poolBalance = 0 ;
+
+        pool.isPoolRoundRunning = false ;
+        
+        // pool = await pool.save() ;
+        // user = await user.save() ;
+
+        return res.send({ pool , user , winner_token_no, winner_id });
+    }
+    catch (ex) {
+        return res.status(400).send(ex.message);
+    }
+
+
+});
+
+async function find_Winner(pool)
+{
+    let noOfTokens = 0;
         let tokens = [];
         for (i in pool.unSatisfiedUsers) {
 
@@ -36,26 +62,7 @@ router.post('/', auth, async (req, res) => {
         let winner_token_no = Math.floor(Math.random() * noOfTokens);
         let winner_id = tokens[winner_token_no];
 
-        pool.satisfiedUsers.push(winner_id) ; 
-        let idx = pool.unSatisfiedUsers.indexOf(winner_id) ;
-        pool.unSatisfiedUsers.splice(idx , 1) ;
-        
-        let user = await User.findById(winner_id) ;
-        user.wallet_balance = user.wallet_balance + pool.poolBalance ;
-        pool.poolBalance = 0 ;
-
-        pool.isPoolRoundRunning = false ;
-        
-        pool = await pool.save() ;
-        user = await user.save() ;
-
-        return res.send({ pool , user , winner_token_no, winner_id });
-    }
-    catch (ex) {
-        return res.status(400).send(ex.message);
-    }
-
-
-});
+        return winner_id ;
+}
 
 module.exports = router;

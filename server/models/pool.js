@@ -25,7 +25,10 @@ const poolSchema = new mongoose.Schema({
 
     poolStdAmtToAdd : {type : Number, required : true},
     poolIsJoinUsersAllowed : {type : Boolean, required : true},
-    isPoolRoundRunning : {type : Boolean, required : true}
+    isPoolRoundRunning : {type : Boolean, required : true},
+
+    voters :{type :Array , required : true},
+    nonVoters : {type : Array , required : true}
     
 
 }) ;
