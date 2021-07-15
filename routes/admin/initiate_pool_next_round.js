@@ -12,6 +12,8 @@ router.post('',auth ,async(req,res)=>{
     let pool = await Pool.findById(req.admin.poolId) ;
     if(!pool) return res.status(400).send('Pool is not present') ;
 
+    if(pool.isPoolRoundRunning) return res.status(400).send('Pool round is currently active , cant initiate next round') ;
+
     pool.roundId = (pool.roundId + 1 )% pool.noOfRounds ;
 
     pool.roundMoneyAdders = [] ;

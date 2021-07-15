@@ -36,7 +36,20 @@ router.post('/', auth, async (req, res) => {
         let winner_token_no = Math.floor(Math.random() * noOfTokens);
         let winner_id = tokens[winner_token_no];
 
-        return res.send({ winner_token_no, winner_id });
+        pool.satisfiedUsers.push(winner_id) ; 
+        let idx = pool.unSatisfiedUsers.indexOf(winner_id) ;
+        pool.unSatisfiedUsers.splice(idx , 1) ;
+        
+        let user = await User.findById(winner_id) ;
+        user.wallet_balance = user.wallet_balance + pool.poolBalance ;
+        pool.poolBalance = 0 ;
+
+        pool.isPoolRoundRunning = false ;
+        
+        pool = await pool.save() ;
+        user = await user.save() ;
+
+        return res.send({ pool , user , winner_token_no, winner_id });
     }
     catch (ex) {
         return res.status(400).send(ex.message);
