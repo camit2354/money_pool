@@ -18,3 +18,7 @@ An algorithm to decide the winner to assign the pool money based on following fa
 3.lottery system
 
 
+x-special/nautilus-clipboard
+copy
+file:///home/amitsinh/Desktop/summer/project/JS-BASICS/money_pool/flow_diagram.pdf
+
