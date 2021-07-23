@@ -25,8 +25,7 @@ router.post('',auth ,async(req,res)=>{
         pool.nonVoters.push( pool.users[i]) ;
     }
 
-    pool.isPoolRoundRunning = true ;
-
+        pool.isPoolRoundRunning = true ;
    
         pool = await pool.save() ;
         return res.send(pool) ;

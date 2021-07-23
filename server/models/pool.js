@@ -39,6 +39,7 @@ function validatePool(pool)
 {
     const schema = Joi.object({
         name : Joi.string().min(3).max(255).required(),
+        amt : Joi.number() ,
         adminId : Joi.objectId().required()
     }) ;
 

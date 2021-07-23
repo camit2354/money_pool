@@ -50,6 +50,9 @@ app.use('/admin/login',admin_login) ;
 app.use('/admin/initiate_pool',initiate_pool) ;
 app.use('/admin/initiate_pool_next_round' , initiate_pool_next_round) ;
 
+app.get('/',(req,res)=>{
+    res.send('Hello world') ;
+}) ;
 const port = process.env.PORT || 12345 ;
 app.listen(port,()=> console.log(`Listening on port ${ port } ... `) ) ;
 
